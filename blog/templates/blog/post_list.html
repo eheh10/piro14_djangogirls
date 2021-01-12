@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">Eunhye Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 2021-01-12 16:00</p>
-            <h2><a href="">첫번째 포스트</a></h2>
-            <p>안녕하세요. 블로그에 오신걸 환영합니다.</p>
-        </div>
-
-        <div>
-            <p>published: 2021-01-12 16:00</p>
-            <h2><a href="">두번째 포스트</a></h2>
-            <p>밖에는 눈이 오고 있습니당.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
